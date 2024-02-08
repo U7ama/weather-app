@@ -127,11 +127,7 @@ function App() {
         alt="weather"
         src={WeatherInfo}
       />
-      {/* <SvgIcon
-        component={WeatherInfo}
-        inheritViewBox
-        sx={{ fontSize: { xs: "100px", sm: "120px", md: "140px" } }}
-      /> */}
+
       <Typography
         variant="h4"
         component="h4"
