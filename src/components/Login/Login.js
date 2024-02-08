@@ -24,6 +24,9 @@ const LoginPage = () => {
         sx={{
           "&:hover": { color: "#2d95bd" },
           color: "white",
+          "@media (max-width: 400px)": {
+            display: "none",
+          },
         }}
       >
         Login

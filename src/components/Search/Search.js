@@ -49,7 +49,7 @@ const Search = ({ onSearchChange }) => {
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
-      <Box sx={{ width: "50%" }}>
+      <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
         <AsyncPaginate
           placeholder="Search for cities"
           debounceTimeout={600}

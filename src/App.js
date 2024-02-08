@@ -240,6 +240,9 @@ function App() {
                 component="div"
                 sx={{
                   marginLeft: 1,
+                  "@media (max-width: 400px)": {
+                    display: "none",
+                  },
                 }}
               >
                 Weather App
