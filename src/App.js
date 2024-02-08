@@ -16,7 +16,7 @@ import TodayWeather from "./components/TodayWeather/TodayWeather";
 import { fetchWeatherData } from "./api/OpenWeatherService";
 import { transformDateFormat } from "./utilities/DatetimeUtils";
 import LoadingBox from "./components/Reusable/LoadingBox";
-import { ReactComponent as SplashIcon } from "./assets/splash-icon.svg";
+import WeatherInfo from "./assets/weather-news.png";
 import ErrorBox from "./components/Reusable/ErrorBox";
 import { ALL_DESCRIPTIONS } from "./utilities/DateConstants";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
@@ -118,11 +118,20 @@ function App() {
         minHeight: "500px",
       }}
     >
-      <SvgIcon
-        component={SplashIcon}
+      <Box
+        component="img"
+        inheritViewBox
+        sx={{
+          fontSize: { xs: "100px", sm: "120px", md: "140px", width: "300px" },
+        }}
+        alt="weather"
+        src={WeatherInfo}
+      />
+      {/* <SvgIcon
+        component={WeatherInfo}
         inheritViewBox
         sx={{ fontSize: { xs: "100px", sm: "120px", md: "140px" } }}
-      />
+      /> */}
       <Typography
         variant="h4"
         component="h4"
