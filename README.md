@@ -5,9 +5,8 @@ User can search locations by city name and observe the weather for current day a
 
 ## Live Demo:
 
-https://weather-app-usama.vercel.app
-
-[![Video]](https://www.youtube.com/watch?v=xweu0-VlPBU)
+Demo URL: https://youtu.be/xweu0-VlPBU
+Live URL: https://weather-app-usama.vercel.app
 
 <br/>
 
