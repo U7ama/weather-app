@@ -1,4 +1,4 @@
-[Weather App](https://weather-app-usama.vercel.app) user can search locations by city name and observe the weather for the next days and user can also login with Google.
+[Weather App](https://weather-app-usama.vercel.app) user can search locations by city name and observe the weather for the next days with nearby cities search functionality and user can also login with Google.
 <br />
 
 ## Live Demo:
