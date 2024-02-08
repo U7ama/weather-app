@@ -7,7 +7,7 @@ User can search locations by city name and observe the weather for current day a
 
 https://weather-app-usama.vercel.app
 
-[![Video](./public/screenshot.png)](https://www.youtube.com/watch?v=xweu0-VlPBU)
+[![Video]](https://www.youtube.com/watch?v=xweu0-VlPBU)
 
 <br/>
 
