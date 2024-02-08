@@ -24,20 +24,46 @@ const Search = ({ onSearchChange }) => {
   const loadOptions = (inputValue) => {
     return new Promise((resolve, reject) => {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(async (position) => {
-          const { latitude, longitude } = position.coords;
-          const citiesList = await fetchCities(inputValue);
-          resolve({
-            options: citiesList.data.map((city) => {
-              return {
-                value: `${city.latitude} ${city.longitude}`,
-                label: `${city.name}, ${city.countryCode}`,
-              };
-            }),
-          });
-        }, reject);
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const { latitude, longitude } = position.coords;
+            const citiesList = await fetchCities(inputValue);
+            resolve({
+              options: citiesList.data.map((city) => {
+                return {
+                  value: `${city.latitude} ${city.longitude}`,
+                  label: `${city.name}, ${city.countryCode}`,
+                };
+              }),
+            });
+          },
+          async () => {
+            // If getCurrentPosition fails, call fetchCities directly
+            const citiesList = await fetchCities(inputValue);
+            resolve({
+              options: citiesList.data.map((city) => {
+                return {
+                  value: `${city.latitude} ${city.longitude}`,
+                  label: `${city.name}, ${city.countryCode}`,
+                };
+              }),
+            });
+          }
+        );
       } else {
-        reject("Geolocation is not supported by this browser.");
+        // If geolocation is not supported, call fetchCities directly
+        fetchCities(inputValue)
+          .then((citiesList) => {
+            resolve({
+              options: citiesList.data.map((city) => {
+                return {
+                  value: `${city.latitude} ${city.longitude}`,
+                  label: `${city.name}, ${city.countryCode}`,
+                };
+              }),
+            });
+          })
+          .catch(reject);
       }
     });
   };
